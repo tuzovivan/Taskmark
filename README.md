@@ -7,6 +7,11 @@ It exists for one reason: not clearing the context is expensive, and clearing it
 research — which file does what, how the pieces connect, what was already tried and failed.
 If that lands in a file, clearing stops being a loss.
 
+**What it did for me** (one heavy user, Claude Code on Opus, ~550 requests a day, 13 days before
+vs 11 days after): average context per request **504k → 270k tokens (−46%)**, cost per request
+**about 40% lower** at the same model prices. Your numbers will depend on how you work — the
+plugin measures them for you (`taskmark report`).
+
 ## Prior art
 
 The JSONL parsing and token accounting follow **ccusage** (MIT, `ccusage/ccusage`), which has
@@ -120,8 +125,11 @@ your context by itself — at a boundary with a large context it says `/clear` i
 ## How well it works
 
 **The point of it.** Before the plugin I rarely cleared the context, for fear of losing what a
-long session had established. With notes written automatically I clear it several times a day:
-average context went from ~500k to ~290k tokens and cost per turn fell by about 40%.
+long session had established: 4 sessions in 13 days. With notes written automatically I clear it
+several times a day: 33 sessions in the 11 days after. Average context per request went from 504k
+to 270k tokens. Priced at one model's rates for both periods (the model got cheaper in between, and
+that must not be counted), a request costs 37–41% less; output per request did not change, so the
+work did not get smaller. This is one person and a before/after comparison, not a controlled test.
 
 **Boundaries, honestly.** Five days of my own use (≈460 prompts): the rules on their
 own mostly cut on pauses, and nearly half of those cuts were wrong. Claude, prompted by the
