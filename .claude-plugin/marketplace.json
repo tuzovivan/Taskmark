@@ -1,0 +1,20 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "taskmark",
+  "description": "Single-plugin marketplace: taskmark marks task boundaries, dumps research notes before the context is lost, and keeps a local token-usage history.",
+  "owner": {
+    "name": "Ivan Tuzov"
+  },
+  "plugins": [
+    {
+      "name": "taskmark",
+      "description": "Marks task boundaries in a Claude Code session, writes research notes to .claude/research before a compaction, and records token usage and cost locally in SQLite.",
+      "author": {
+        "name": "Ivan Tuzov"
+      },
+      "category": "productivity",
+      "license": "Apache-2.0",
+      "source": "./"
+    }
+  ]
+}

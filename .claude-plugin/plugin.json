@@ -1,0 +1,8 @@
+{
+  "name": "taskmark",
+  "version": "0.1.0",
+  "description": "Marks task boundaries in a Claude Code session, dumps research notes to files before the context is lost, and keeps a local token-usage history.",
+  "author": {"name": "Ivan Tuzov"},
+  "license": "Apache-2.0",
+  "keywords": ["context", "tokens", "research", "notes"]
+}

@@ -1,0 +1,23 @@
+{
+  "description": "taskmark: marks task boundaries, writes research notes to .claude/research before the context is lost, records token usage locally.",
+  "hooks": {
+    "SessionStart": [
+      {"hooks": [{"type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/bin/taskmark\" hook session-start", "timeout": 20}]}
+    ],
+    "UserPromptSubmit": [
+      {"hooks": [{"type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/bin/taskmark\" hook prompt", "timeout": 25}]}
+    ],
+    "PostToolUse": [
+      {"matcher": "Read|Edit|Write|NotebookEdit|Grep|Glob|Bash", "hooks": [{"type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/bin/taskmark\" hook tool", "timeout": 15}]}
+    ],
+    "PreCompact": [
+      {"hooks": [{"type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/bin/taskmark\" hook pre-compact", "timeout": 60}]}
+    ],
+    "Stop": [
+      {"hooks": [{"type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/bin/taskmark\" hook stop", "timeout": 60}]}
+    ],
+    "SessionEnd": [
+      {"hooks": [{"type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/bin/taskmark\" hook session-end", "timeout": 60}]}
+    ]
+  }
+}

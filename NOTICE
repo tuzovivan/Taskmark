@@ -1,0 +1,10 @@
+taskmark
+Copyright 2026 Ivan Tuzov
+
+This product includes design ideas (not code) from:
+  - ccusage — https://github.com/ccusage/ccusage — MIT, Copyright (c) 2025 ryoppippi
+    (JSONL dedupe key and token accounting rules)
+  - claude-powerline — https://github.com/Owloops/claude-powerline — MIT
+    (context-size calculation from the last main-chain turn)
+  - claude-devtools — https://github.com/matt1398/claude-devtools — MIT
+    (session / tool / subagent inspection, reviewed for scope)
